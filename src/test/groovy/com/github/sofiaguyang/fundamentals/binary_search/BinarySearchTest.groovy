@@ -5,14 +5,19 @@ import com.google.common.primitives.Ints
 import spock.lang.Specification
 import spock.lang.Unroll
 
-class BinarySearchIterationTest extends Specification {
+class BinarySearchTest extends Specification {
     @Unroll
-    def "returns #expectedResult given nums=#nums and target=#target"() {
+    def "recursion returns #expectedResult given nums=#nums and target=#target"() {
         given:
+        def binarySearchRecursion = new BinarySearchRecursion()
         def binarySearchIteration = new BinarySearchIteration()
 
+        and:
+        def numsArray = Ints.toArray(nums)
+
         expect:
-        binarySearchIteration.search(Ints.toArray(nums), target) == expectedResult
+        binarySearchRecursion.search(numsArray, target) == expectedResult
+        binarySearchIteration.search(numsArray, target) == expectedResult
 
         where:
         nums                 | target || expectedResult
