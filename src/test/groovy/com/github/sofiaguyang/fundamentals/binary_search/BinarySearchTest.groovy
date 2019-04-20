@@ -7,7 +7,7 @@ import spock.lang.Unroll
 
 class BinarySearchTest extends Specification {
     @Unroll
-    def "Returns #expectedResult given nums=#nums and target=#target"() {
+    def "Returns #expected given nums=#nums and target=#target"() {
         given:
         def binarySearchRecursion = new BinarySearchRecursion()
         def binarySearchIteration = new BinarySearchIteration()
@@ -16,11 +16,11 @@ class BinarySearchTest extends Specification {
         def numsArray = Ints.toArray(nums)
 
         expect:
-        binarySearchRecursion.search(numsArray, target) == expectedResult
-        binarySearchIteration.search(numsArray, target) == expectedResult
+        binarySearchRecursion.search(numsArray, target) == expected
+        binarySearchIteration.search(numsArray, target) == expected
 
         where:
-        nums                 | target || expectedResult
+        nums                 | target || expected
         [-1, 0, 3, 5, 9, 12] | 2      || -1
         [-1, 0, 3, 5, 9, 12] | 13     || -1
         [-1, 0, 3, 5, 9, 12] | 9      || 4
