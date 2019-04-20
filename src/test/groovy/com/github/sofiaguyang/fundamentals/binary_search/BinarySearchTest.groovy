@@ -7,7 +7,7 @@ import spock.lang.Unroll
 
 class BinarySearchTest extends Specification {
     @Unroll
-    def "recursion returns #expectedResult given nums=#nums and target=#target"() {
+    def "Returns #expectedResult given nums=#nums and target=#target"() {
         given:
         def binarySearchRecursion = new BinarySearchRecursion()
         def binarySearchIteration = new BinarySearchIteration()
