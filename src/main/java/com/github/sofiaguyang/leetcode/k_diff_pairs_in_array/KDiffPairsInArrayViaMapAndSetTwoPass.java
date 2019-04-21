@@ -2,7 +2,7 @@ package com.github.sofiaguyang.leetcode.k_diff_pairs_in_array;
 
 import java.util.*;
 
-public class KDiffPairsInArrayViaMapAndSet {
+public class KDiffPairsInArrayViaMapAndSetTwoPass {
     public int findPairs(int[] nums, int k) {
         // Because absolute difference can never be negative
         if(k < 0)

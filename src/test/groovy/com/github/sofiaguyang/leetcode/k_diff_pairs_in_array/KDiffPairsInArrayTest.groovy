@@ -10,12 +10,14 @@ class KDiffPairsInArrayTest extends Specification {
     @Unroll
     def "Returns #expected k-diff pairs given nums=#nums and k=#k"() {
         given:
-        def mapAndSetSolution = new KDiffPairsInArrayViaMapAndSet()
-        def mapOnlySolution = new KDiffPairsInArrayViaMapOnly()
+        def mapAndSetSolutionTwoPass = new KDiffPairsInArrayViaMapAndSetTwoPass()
+        def mapOnlySolutionTwoPass = new KDiffPairsInArrayViaMapOnlyTwoPass()
+        def mapOrSetOnePassSolution = new KDiffPairsInArrayViaMapOrSetOnePass()
 
         expect:
-        mapAndSetSolution.findPairs(Ints.toArray(nums), k) == expected
-        mapOnlySolution.findPairs(Ints.toArray(nums), k) == expected
+        mapAndSetSolutionTwoPass.findPairs(Ints.toArray(nums), k) == expected
+        mapOnlySolutionTwoPass.findPairs(Ints.toArray(nums), k) == expected
+        mapOrSetOnePassSolution.findPairs(Ints.toArray(nums), k) == expected
 
         where:
         nums            | k  || expected
