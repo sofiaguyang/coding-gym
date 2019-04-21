@@ -9,10 +9,10 @@ class TwoSumTest extends Specification {
     @Unroll
     def "Returns #expected nums=#nums and target=#target"() {
         given:
-        TwoSum twoSum = new TwoSum()
+        def solution = new TwoSum()
 
         expect:
-        twoSum.twoSum(nums as int[], target) == expected as int[]
+        solution.twoSum(nums as int[], target) == expected as int[]
 
         where:
         nums                 | target || expected

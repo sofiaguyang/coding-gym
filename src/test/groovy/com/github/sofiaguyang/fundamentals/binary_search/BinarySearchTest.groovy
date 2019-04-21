@@ -9,15 +9,15 @@ class BinarySearchTest extends Specification {
     @Unroll
     def "Returns #expected given nums=#nums and target=#target"() {
         given:
-        def binarySearchRecursion = new BinarySearchRecursion()
-        def binarySearchIteration = new BinarySearchIteration()
+        def recursiveSolution = new BinarySearchRecursion()
+        def iterativeSolution = new BinarySearchIteration()
 
         and:
         def numsArray = Ints.toArray(nums)
 
         expect:
-        binarySearchRecursion.search(numsArray, target) == expected
-        binarySearchIteration.search(numsArray, target) == expected
+        recursiveSolution.search(numsArray, target) == expected
+        iterativeSolution.search(numsArray, target) == expected
 
         where:
         nums                 | target || expected

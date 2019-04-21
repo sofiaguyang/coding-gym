@@ -10,10 +10,10 @@ class MedianOfTwoSortedArraysTest extends Specification {
     @Unroll
     def "Returns median=#expected of two sorted arrays #nums1 and #nums2"() {
         given:
-        def medianOfTwoSortedArrays = new MedianOfTwoSortedArrays()
+        def solution = new MedianOfTwoSortedArrays()
 
         expect:
-        medianOfTwoSortedArrays.findMedianSortedArrays(Ints.toArray(nums1), Ints.toArray(nums2)) == expected
+        solution.findMedianSortedArrays(Ints.toArray(nums1), Ints.toArray(nums2)) == expected
 
         where:
         nums1               | nums2            || expected
