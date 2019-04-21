@@ -2,9 +2,10 @@ package com.github.sofiaguyang.leetcode.k_diff_pairs_in_array;
 
 import java.util.*;
 
-public class KDiffPairsInArray {
+public class KDiffPairsInArrayViaMapAndSet {
     public int findPairs(int[] nums, int k) {
-        if(k < 0) // because absolute difference can never be negative
+        // Because absolute difference can never be negative
+        if(k < 0)
             return 0;
 
         Map<Integer, Integer> num2Count = new HashMap<>();
